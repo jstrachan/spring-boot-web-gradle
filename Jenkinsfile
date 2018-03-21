@@ -1,6 +1,6 @@
 pipeline {
     agent {
-      label "jenkins-spring-boot-web-gradlegradle"
+      label "jenkins-gradle"
     }
     environment {
       ORG               = 'jenkinsx'
