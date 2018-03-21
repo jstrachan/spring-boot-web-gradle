@@ -2,7 +2,7 @@ pipeline {
     agent {
       label "jenkins-gradle"
     }
-    environment {spring-boot-web-gradle
+    environment {
       ORG               = 'jenkinsx'
       APP_NAME          = 'spring-boot-web-gradle'
       GIT_CREDS         = credentials('jenkins-x-gitea')
