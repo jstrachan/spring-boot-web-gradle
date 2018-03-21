@@ -1,6 +1,6 @@
 pipeline {
     agent {
-      label "jenkins-gradle"
+      label "jenkins-spring-boot-web-gradlegradle"
     }
     environment {
       ORG               = 'jenkinsx'
@@ -52,7 +52,7 @@ pipeline {
             // TODO
             //sh "mvn versions:set -DnewVersion=\$(cat VERSION)"
           }
-          dir ('./charts/my-spring-boot48') {
+          dir ('./charts/spring-boot-web-gradle') {
             container('gradle') {
               sh "make tag"
             }
@@ -70,7 +70,7 @@ pipeline {
           branch 'master'
         }
         steps {
-          dir ('./charts/my-spring-boot48') {
+          dir ('./charts/spring-boot-web-gradle') {
             container('gradle') {
               sh 'jx step changelog --version \$(cat ../../VERSION)'
 
