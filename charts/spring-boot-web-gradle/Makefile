@@ -1,6 +1,6 @@
 CHART_REPO := http://jenkins-x-chartmuseum:8080
 CURRENT=$(pwd)
-NAME := my-spring-boot48
+NAME := spring-boot-web-gradle
 OS := $(shell uname)
 RELEASE_VERSION := $(shell cat ../../VERSION)
 
