@@ -30,7 +30,7 @@ pipeline {
           }
 
           dir ('./charts/preview') {
-           container('maven') {
+           container('gradle') {
              sh "make preview"
              sh "jx preview --app $APP_NAME --dir ../.."
            }
@@ -53,11 +53,11 @@ pipeline {
             //sh "mvn versions:set -DnewVersion=\$(cat VERSION)"
           }
           dir ('./charts/my-spring-boot48') {
-            container('maven') {
+            container('gradle') {
               sh "make tag"
             }
           }
-          container('maven') {
+          container('gradle') {
             sh 'mvn clean deploy'
 
             sh "docker build -t \$JENKINS_X_DOCKER_REGISTRY_SERVICE_HOST:\$JENKINS_X_DOCKER_REGISTRY_SERVICE_PORT/$ORG/$APP_NAME:\$(cat VERSION) ."
